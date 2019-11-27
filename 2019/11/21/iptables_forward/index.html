@@ -21,14 +21,17 @@
   <meta name="description" content="Linux 下查看ip_forward 是否开启12[root@localhost ~]# cat &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_forward0  临时开启1[root@localhost ~]# echo &amp;quot;1&amp;quot;  &amp;gt; &#x2F;etc&#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_forward  永久生效123[root@localhost ~]# echo &amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iptables 开启转发 共享无线→有线">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;psyan&#x2F;index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;iptables_forward&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Linux 下查看ip_forward 是否开启12[root@localhost ~]# cat &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_forward0  临时开启1[root@localhost ~]# echo &amp;quot;1&amp;quot;  &amp;gt; &#x2F;etc&#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_forward  永久生效123[root@localhost ~]# echo &amp;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-27T13:58:16.827Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;1.png">
+<meta property="og:updated_time" content="2019-11-27T14:21:29.380Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;2.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://yoursite.com/2019/11/21/psyan/index.html">
+  <link rel="canonical" href="http://yoursite.com/2019/11/21/iptables_forward/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -235,7 +238,7 @@ _st('install','true','2.0.0');
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -247,6 +250,21 @@ _st('install','true','2.0.0');
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/27/git-hexo/" class="title">git_hexo</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-27T14:03:22.000Z" itemprop="datePublished">2019-11-27</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -269,7 +287,7 @@ _st('install','true','2.0.0');
                 
               </p>
               <p class="item-title">
-                <a href="/2019/11/21/psyan/" class="title">iptables 开启转发 共享无线→有线</a>
+                <a href="/2019/11/21/iptables_forward/" class="title">iptables 开启转发 共享无线→有线</a>
               </p>
               <p class="item-date">
                 <time datetime="2019-11-21T13:04:49.000Z" itemprop="datePublished">2019-11-21</time>
@@ -290,7 +308,7 @@ _st('install','true','2.0.0');
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-psyan" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-iptables_forward" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
@@ -305,7 +323,7 @@ _st('install','true','2.0.0');
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2019/11/21/psyan/" class="article-date">
+	<a href="/2019/11/21/iptables_forward/" class="article-date">
 	  <time datetime="2019-11-21T13:04:49.000Z" itemprop="datePublished">2019-11-21</time>
 	</a>
 </span>
@@ -321,7 +339,7 @@ _st('install','true','2.0.0');
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/21/psyan/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/21/iptables_forward/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
@@ -365,14 +383,16 @@ _st('install','true','2.0.0');
 <p><strong>mangle表:</strong>为数据包设置标记（较少使用）</p>
 <p><strong>nat表:</strong>修改数据包中的源、目标IP地址或端口</p>
 <p><strong>filter表:</strong>确定是否放行该数据包（过滤）</p>
-<p><img src="" alt="https://rsyan.coding.net/p/rsyan.coding.me/git/raw/master/images/1387124-20180606225916717-862172332.png"></p>
+<img src="/.com//2.png">
+
 <p><strong>规则表的先后顺序:raw→mangle→nat→filter</strong></p>
 <p><strong>规则链的先后顺序:</strong></p>
 <p><strong>入站顺序:</strong>PREROUTING→INPUT</p>
 <p><strong>出站顺序:</strong>OUTPUT→POSTROUTING</p>
 <p><strong>转发顺序:</strong>PREROUTING→FORWARD→POSTROUTING</p>
 <p><strong>内建表与链的关系流程图（去掉了mangle表）：</strong></p>
-<p><img src="" alt="https://rsyan.coding.net/p/rsyan.coding.me/d/rsyan.coding.me/git/blob/master/images/1387124-20180606225916717-862172332.png"></p>
+<img src="/.com//1.png">
+
 <p><strong>另外注意：</strong></p>
 <p>1.没有指定规则表则默认指filter表。</p>
 <p>2.不指定规则链则指表内所有的规则链。</p>
@@ -388,7 +408,7 @@ _st('install','true','2.0.0');
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2019/11/21/psyan/" title="iptables 开启转发 共享无线→有线" target="_blank" rel="external">http://yoursite.com/2019/11/21/psyan/</a>
+      <a href="http://yoursite.com/2019/11/21/iptables_forward/" title="iptables 开启转发 共享无线→有线" target="_blank" rel="external">http://yoursite.com/2019/11/21/iptables_forward/</a>
     </li>
     
     <li class="post-copyright-license">
